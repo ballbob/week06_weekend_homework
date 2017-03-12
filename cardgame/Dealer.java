@@ -21,15 +21,27 @@ public class Dealer {
     return this.name;
   }
 
+//hand and playing
   public int getHandSize(){
     return this.hand.size();
-  }
-
-  public int getDeckSize(){
-    return this.deck.size();
   }
 
   public void addCardtoHand(Card card){
     this.hand.add(card);
   }
+
+  public int handValue(){
+    Card card1 = this.hand.get(0);
+    int card1val = card1.getValue();
+    Card card2 = this.hand.get(1);
+    int card2val = card2.getValue();
+    int value = (card1val + card2val);
+    return value;    
+  }
+
+//deck
+  public int getDeckSize(){
+    return this.deck.size();
+  }
+
 }

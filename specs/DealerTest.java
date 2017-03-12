@@ -121,14 +121,10 @@ public class DealerTest{
     assertEquals("Jim", dealer.getName());
   }
 
+//hand
   @Test
   public void handStartsEmpty(){
     assertEquals(0, dealer.getHandSize());
-  }
-
-  @Test
-  public void deckStartsEmpty(){
-    assertEquals(0, dealer.getDeckSize());
   }
 
   @Test
@@ -136,4 +132,18 @@ public class DealerTest{
     dealer.addCardtoHand(card50);
     assertEquals(1,dealer.getHandSize());
   }
+
+  @Test
+  public void canGetHandValue(){
+    dealer.addCardtoHand(card3);
+    dealer.addCardtoHand(card6);
+    assertEquals(18,dealer.handValue());
+  }
+
+//deck
+  @Test
+  public void deckStartsEmpty(){
+    assertEquals(0, dealer.getDeckSize());
+  }
+
 }
