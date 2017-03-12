@@ -25,7 +25,7 @@ public class Player{
   }
 
   public void addCard(Card card){
-    this.hand.add(0,card);
+    this.hand.add(card);
   }
 
   public String viewTopCard(){

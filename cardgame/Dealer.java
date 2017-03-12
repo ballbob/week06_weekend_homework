@@ -20,4 +20,8 @@ public class Dealer {
   public String getName(){
     return this.name;
   }
+
+  public void addCardtoHand(Card card){
+    this.hand.add(card);
+  }
 }
