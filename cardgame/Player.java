@@ -1,6 +1,6 @@
-import java.util.*;
-
 package cardgame;
+
+import java.util.*;
 
 //The Player class must have a hand (an ArrayList of cards) and a name to identify them.
 //This class should be able to play a card or request another card from the deck.
@@ -11,8 +11,13 @@ public class Player{
   private String name;
   private ArrayList<Card> hand;
 
-  public Player(){
+  public Player(String name){
     this.name = name;
     this.hand = new ArrayList<Card>();
   }
+
+  public String getName(){
+    return this.name;
+  }
+
 }
