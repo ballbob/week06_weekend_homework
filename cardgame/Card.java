@@ -16,4 +16,8 @@ public class Card {
     return this.suit;
   }
 
+  public Face getFace(){
+    return this.face;
+  }
+
 }

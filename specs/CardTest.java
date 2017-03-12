@@ -7,13 +7,16 @@ public class CardTest{
 
   @Before
   public void before(){
-    card = new Card(Suit.DIAMONDS, Face.KING, 10);
-    System.out.println(card);
+    card = new Card(Suit.DIAMONDS, Face.KING, 10); 
   }
 
   @Test
   public void canGetSuit(){
-    System.out.println(card);
     assertEquals(Suit.DIAMONDS, card.getSuit());
+  }
+
+  @Test
+  public void canGetFace(){
+    assertEquals(Face.KING, card.getFace());
   }
 }
