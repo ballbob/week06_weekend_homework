@@ -29,4 +29,12 @@ public class PlayerTest{
     player.addCard(card1);
     assertEquals(1,player.handLength());
   }
+
+  @Test
+  public void canViewTop(){
+    player.addCard(card1);
+    player.addCard(card2);
+    assertEquals("FIVE of DIAMONDS (5)",player.viewTopCard());
+  }
+
 }

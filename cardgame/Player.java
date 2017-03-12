@@ -28,4 +28,9 @@ public class Player{
     this.hand.add(0,card);
   }
 
+  public String viewTopCard(){
+    Card topcard = this.hand.get(0);
+    return topcard.getAll();
+  }
+
 }
