@@ -19,4 +19,9 @@ public class CardTest{
   public void canGetFace(){
     assertEquals(Face.KING, card.getFace());
   }
+
+  @Test
+  public void canGetValue(){
+    assertEquals(10, card.getValue());
+  }
 }

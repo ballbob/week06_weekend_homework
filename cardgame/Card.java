@@ -20,4 +20,8 @@ public class Card {
     return this.face;
   }
 
+  public int getValue(){
+    return this.value;
+  }
+
 }
