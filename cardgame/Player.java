@@ -33,4 +33,9 @@ public class Player{
     return topcard.getAll();
   }
 
+  public String viewSecondCard(){
+    Card bottomcard = this.hand.get(1);
+    return bottomcard.getAll();
+  }
+
 }

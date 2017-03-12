@@ -37,4 +37,11 @@ public class PlayerTest{
     assertEquals("FIVE of DIAMONDS (5)",player.viewTopCard());
   }
 
+  @Test
+  public void canViewSecond(){
+    player.addCard(card1);
+    player.addCard(card2);
+    assertEquals("EIGHT of HEARTS (8)",player.viewSecondCard());
+  }
+
 }
