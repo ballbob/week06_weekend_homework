@@ -24,4 +24,11 @@ public class CardTest{
   public void canGetValue(){
     assertEquals(10, card.getValue());
   }
+
+  @Test
+  public void canGetAll(){
+    String allstring = card.getAll();
+    assertEquals("KING of DIAMONDS (10)",allstring);
+  }
+
 }

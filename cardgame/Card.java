@@ -24,4 +24,8 @@ public class Card {
     return this.value;
   }
 
+  public String getAll(){
+    return this.face + " of " + this.suit + " (" + this.value + ")"; 
+  }
+
 }
