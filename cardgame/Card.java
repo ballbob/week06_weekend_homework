@@ -1,5 +1,7 @@
  package cardgame;
 
+ // the Card class needs a face, value and suit. It must have methods to show these details. 
+
 public class Card {
 
   private Suit suit;

@@ -30,5 +30,4 @@ public class CardTest{
     String allstring = card.getAll();
     assertEquals("KING of DIAMONDS (10)",allstring);
   }
-
 }
