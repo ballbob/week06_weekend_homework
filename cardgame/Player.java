@@ -38,6 +38,7 @@ public class Player{
     return bottomcard.getAll();
   }
 
+  //Standard two-card hand if the player is confident.
   public String playCards(){
     String theName = this.name;
     Card theCard1 = this.hand.get(0);
@@ -46,6 +47,16 @@ public class Player{
     String theCard2String = theCard2.getAll(); 
     String playString = theName + " plays the " + theCard1String + " and the " + theCard2String;
     return playString;
+  }
+
+//
+  public int handValue(){
+    Card card1 = this.hand.get(0);
+    int card1val = card1.getValue();
+    Card card2 = this.hand.get(1);
+    int card2val = card2.getValue();
+    int value = (card1val + card2val);
+    return value;    
   }
 
 }

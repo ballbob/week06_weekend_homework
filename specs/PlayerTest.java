@@ -51,4 +51,11 @@ public class PlayerTest{
     assertEquals("Remy plays the FIVE of DIAMONDS (5) and the EIGHT of HEARTS (8)",player.playCards());
   }
 
+  @Test
+  public void canCheckValue(){
+    player.addCard(card1);
+    player.addCard(card2);
+    assertEquals(13,player.handValue());
+  }
+
 }
