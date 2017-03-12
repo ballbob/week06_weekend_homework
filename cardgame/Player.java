@@ -38,4 +38,14 @@ public class Player{
     return bottomcard.getAll();
   }
 
+  public String playCards(){
+    String theName = this.name;
+    Card theCard1 = this.hand.get(0);
+    String theCard1String = theCard1.getAll();
+    Card theCard2 = this.hand.get(1);
+    String theCard2String = theCard2.getAll(); 
+    String playString = theName + " plays the " + theCard1String + " and the " + theCard2String;
+    return playString;
+  }
+
 }
