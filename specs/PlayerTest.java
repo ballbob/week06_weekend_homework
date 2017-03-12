@@ -23,4 +23,10 @@ public class PlayerTest{
   public void handStartsEmpty(){
     assertEquals(0,player.handLength());
   }
+
+  @Test
+  public void canAddCard(){
+    player.addCard(card1);
+    assertEquals(1,player.handLength());
+  }
 }
