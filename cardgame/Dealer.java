@@ -2,7 +2,6 @@ package cardgame;
 
 import java.util.*;
 
-
 // The Dealer class must have a name to identify them, one ArrayList for the deck, and another ArrayList for its present hand, which begins empty.
 // It must be able to shuffle the deck, deal one or two cards to the player and display the top card of its hand.
 
@@ -57,5 +56,11 @@ public class Dealer {
 
   public void populateDeck(Card[] cards){
     this.deck.addAll(Arrays.asList(cards));
+  }
+
+  public Card shuffleDeal(){
+    Random rand = new Random(); 
+    int index = rand.nextInt(54); 
+    return this.deck.get(index);
   }
 }
