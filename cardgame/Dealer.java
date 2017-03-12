@@ -63,4 +63,11 @@ public class Dealer {
     int index = rand.nextInt(54); 
     return this.deck.get(index);
   }
+
+//to player
+
+  public void dealToPlayer(Player player){
+    Card newCard = shuffleDeal();
+    player.addCard(newCard);
+  }
 }
