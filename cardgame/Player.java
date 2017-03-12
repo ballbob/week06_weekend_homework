@@ -20,4 +20,8 @@ public class Player{
     return this.name;
   }
 
+  public int handLength(){
+    return this.hand.size();
+  }
+
 }
