@@ -21,6 +21,14 @@ public class Dealer {
     return this.name;
   }
 
+  public int getHandSize(){
+    return this.hand.size();
+  }
+
+  public int getDeckSize(){
+    return this.deck.size();
+  }
+
   public void addCardtoHand(Card card){
     this.hand.add(card);
   }

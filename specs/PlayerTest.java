@@ -30,26 +30,26 @@ public class PlayerTest{
     assertEquals(1,player.handLength());
   }
 
-  @Test
-  public void canViewTop(){
-    player.addCard(card1);
-    player.addCard(card2);
-    assertEquals("FIVE of DIAMONDS (5)",player.viewTopCard());
-  }
+//  @Test
+//  public void canViewTop(){
+//    player.addCard(card1);
+//    player.addCard(card2);
+//    assertEquals("FIVE of DIAMONDS (5)",player.viewTopCard());
+//  }
+//
+//  @Test
+//  public void canViewSecond(){
+//    player.addCard(card1);
+//    player.addCard(card2);
+//    assertEquals("EIGHT of HEARTS (8)",player.viewSecondCard());
+//  }
 
-  @Test
-  public void canViewSecond(){
-    player.addCard(card1);
-    player.addCard(card2);
-    assertEquals("EIGHT of HEARTS (8)",player.viewSecondCard());
-  }
-
-  @Test
-  public void canPlayCards(){
-    player.addCard(card1);
-    player.addCard(card2);
-    assertEquals("Remy plays the FIVE of DIAMONDS (5) and the EIGHT of HEARTS (8)",player.playCards());
-  }
+//  @Test
+//  public void canPlayCards(){
+//    player.addCard(card1);
+//    player.addCard(card2);
+//    assertEquals("Remy plays the FIVE of DIAMONDS (5) and the EIGHT of HEARTS (8)",player.playCards());
+//  }
 
   @Test
   public void canCheckValue(){

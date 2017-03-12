@@ -120,4 +120,14 @@ public class DealerTest{
   public void canGetName(){
     assertEquals("Jim", dealer.getName());
   }
+
+  @Test
+  public void handStartsEmpty(){
+    assertEquals(0, dealer.getHandSize());
+  }
+
+  @Test
+  public void deckStartsEmpty(){
+    assertEquals(0, dealer.getDeckSize());
+  }
 }
