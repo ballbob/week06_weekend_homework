@@ -130,4 +130,10 @@ public class DealerTest{
   public void deckStartsEmpty(){
     assertEquals(0, dealer.getDeckSize());
   }
+
+  @Test
+  public void canAddCardtoHand(){
+    dealer.addCardtoHand(card50);
+    assertEquals(1,dealer.getHandSize());
+  }
 }
