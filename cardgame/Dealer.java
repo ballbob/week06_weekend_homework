@@ -30,6 +30,16 @@ public class Dealer {
     this.hand.add(card);
   }
 
+  public String playCards(){
+    String theName = this.name;
+    Card theCard1 = this.hand.get(0);
+    String theCard1String = theCard1.getAll();
+    Card theCard2 = this.hand.get(1);
+    String theCard2String = theCard2.getAll(); 
+    String playString = theName + " had the " + theCard1String + " and the " + theCard2String;
+    return playString;
+  }
+
   public int handValue(){
     Card card1 = this.hand.get(0);
     int card1val = card1.getValue();

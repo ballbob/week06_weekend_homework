@@ -140,6 +140,13 @@ public class DealerTest{
     assertEquals(18,dealer.handValue());
   }
 
+  @Test
+  public void canPlayCards(){
+    dealer.addCardtoHand(card3);
+    dealer.addCardtoHand(card6);
+    assertEquals("Jim had the JACK of HEARTS (10) and the EIGHT of HEARTS (8)", dealer.playCards());    
+  }
+
 //deck
   @Test
   public void deckStartsEmpty(){
