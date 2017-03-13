@@ -1,11 +1,11 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 import cardgame.*;
-import static org.hamcrest.CoreMatchers.*;
 
-public class DealerTest{
+public class GameTest{
   Player player;
   Dealer dealer;
+  Game game;
   Card card1; 
   Card card2; 
   Card card3; 
@@ -60,11 +60,14 @@ public class DealerTest{
   Card card52;
   Card[] cardArray;
   Card dealtCard;
+  Card dealtCard1;
+  Card dealtCard2;
 
   @Before
   public void before(){
     dealer = new Dealer("Jim");
     player = new Player("Jom");
+    game = new Game(player,dealer);
     card1 = new Card(Suit.HEARTS, Face.KING, 10);
     card2 = new Card(Suit.HEARTS, Face.QUEEN, 10);
     card3 = new Card(Suit.HEARTS, Face.JACK, 10);
@@ -121,64 +124,24 @@ public class DealerTest{
     Card[] cardArray = {card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17,card18,card19,card20,card21,card22,card23,card24,card25,card26,card27,card28,card29,card30,card31,card32,card33,card34,card35,card36,card37,card38,card39,card40,card41,card42,card43,card44,card45,card46,card47,card48,card49,card50,card51,card52};
   }
 
-  @Test
-  public void canGetName(){
-    assertEquals("Jim", dealer.getName());
-  }
+    @Test
+    public void canPlayerWin(){
+      Card[] cardArray = {card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17,card18,card19,card20,card21,card22,card23,card24,card25,card26,card27,card28,card29,card30,card31,card32,card33,card34,card35,card36,card37,card38,card39,card40,card41,card42,card43,card44,card45,card46,card47,card48,card49,card50,card51,card52};
 
-//hand
-  @Test
-  public void handStartsEmpty(){
-    assertEquals(0, dealer.getHandSize());
-  }
+      dealer.populateDeck(cardArray);
 
-  @Test
-  public void canAddCardToHand(){
-    dealer.addCardToHand(card50);
-    assertEquals(1,dealer.getHandSize());
-  }
+      player.addCard(card21);
 
-  @Test
-  public void canGetHandValue(){
-    dealer.addCardToHand(card3);
-    dealer.addCardToHand(card6);
-    assertEquals(18,dealer.handValue());
-  }
+      player.addCard(card30);
 
-  @Test
-  public void canPlayCards(){
-    dealer.addCardToHand(card3);
-    dealer.addCardToHand(card6);
-    assertEquals("Jim had the JACK of HEARTS (10) and the EIGHT of HEARTS (8)", dealer.playCards());    
-  }
+      Card dealtCard1 = dealer.shuffleDeal();
 
-//deck
-  @Test
-  public void deckStartsEmpty(){
-    assertEquals(0, dealer.getDeckSize());
-  }
+      dealer.addCardToHand(dealtCard1);
 
-  @Test
-  public void canPopulateDeck(){
-    Card[] cardArray = {card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17,card18,card19,card20,card21,card22,card23,card24,card25,card26,card27,card28,card29,card30,card31,card32,card33,card34,card35,card36,card37,card38,card39,card40,card41,card42,card43,card44,card45,card46,card47,card48,card49,card50,card51,card52};
-    dealer.populateDeck(cardArray);
-    assertEquals(52,dealer.getDeckSize());
-  }
+      Card dealtCard2 = dealer.shuffleDeal();
 
-  @Test
-  public void canShuffleDeal(){
-    Card[] cardArray = {card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17,card18,card19,card20,card21,card22,card23,card24,card25,card26,card27,card28,card29,card30,card31,card32,card33,card34,card35,card36,card37,card38,card39,card40,card41,card42,card43,card44,card45,card46,card47,card48,card49,card50,card51,card52};
-    dealer.populateDeck(cardArray);
-    dealtCard = dealer.shuffleDeal();
-    assertThat(card1, is(not(dealtCard)));
-  }
+      dealer.addCardToHand(dealtCard2);
 
-  @Test
-  public void canDealToPlayer(){
-    Card[] cardArray = {card1,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17,card18,card19,card20,card21,card22,card23,card24,card25,card26,card27,card28,card29,card30,card31,card32,card33,card34,card35,card36,card37,card38,card39,card40,card41,card42,card43,card44,card45,card46,card47,card48,card49,card50,card51,card52};
-    dealer.populateDeck(cardArray);
-    dealer.dealToPlayer(player);
-    assertEquals(1,player.handLength());
-  }
-
+      assertEquals("Player wins.",game.playerPlaysHand());
+    }
 }
